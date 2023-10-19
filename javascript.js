@@ -64,11 +64,29 @@ To determine which score variable should have a point added, the playRound funct
 results can be searched for the text 'win', 'lose', or 'tie'.
 The score variables will be compared at the end of the function.*/
 
+let playerScore = 0;
+let computerScore = 0;
+
 function game() {
     for (let i = 0; i < 5; i++) {
         playerChoice = prompt("Rock, paper, or scissors?").toLowerCase();
-        console.log(playRound(playerChoice, computerChoice));
+        let roundResult = playRound(playerChoice, computerChoice);
+        if (roundResult.includes("win")) {
+            console.log(roundResult);
+            playerScore++;
+            console.log(`Score - Player: ${playerScore} Computer: ${computerScore}`);
+        } else if (roundResult.includes("tie")) {
+            console.log(roundResult);
+            playerScore++;
+            computerScore++;
+            console.log(`Score - Player: ${playerScore} Computer: ${computerScore}`);
+        } else if (roundResult.includes("lose")) {
+            console.log(roundResult);
+            computerScore++;
+            console.log(`Score - Player: ${playerScore} Computer: ${computerScore}`);
+        }
+        }
     }
-}
+
 
 game();
