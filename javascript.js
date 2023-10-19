@@ -28,7 +28,7 @@ The user selection will be stored in the variable playerChoice.
 The function playRound will take playerChoice and computerChoice as its parameters.
 playRound will compare the parameters and return a statement regarding the results*/
 
-let playerChoice = prompt("Rock, paper, or scissors?").toLowerCase();
+let playerChoice;
 
 getComputerChoice();
 
@@ -54,4 +54,21 @@ function playRound(playerChoice, computerChoice) {
     }
 }
 
-console.log(playRound(playerChoice, computerChoice));
+
+
+/* The next function will be called game(), and it will use the previous function
+to create a 5 round game that keeps score and reports a winner or loser at the end.
+A for loop will be used to repeat the function 5 times. 
+To keep score there will be a variable for the playerScore and the computerScore.
+To determine which score variable should have a point added, the playRound function 
+results can be searched for the text 'win', 'lose', or 'tie'.
+The score variables will be compared at the end of the function.*/
+
+function game() {
+    for (let i = 0; i < 5; i++) {
+        playerChoice = prompt("Rock, paper, or scissors?").toLowerCase();
+        console.log(playRound(playerChoice, computerChoice));
+    }
+}
+
+game();
