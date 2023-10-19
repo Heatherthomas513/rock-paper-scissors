@@ -21,7 +21,7 @@ function getComputerChoice() {
     return computerChoice;
 }
 
-console.log(getComputerChoice());
+
 
 /* Using prompt() users can type in rock, paper, or scissors.
 The user selection will be stored in the variable playerChoice.
@@ -29,7 +29,8 @@ The function playRound will take playerChoice and computerChoice as its paramete
 playRound will compare the parameters and return a statement regarding the results*/
 
 let playerChoice = prompt("Rock, paper, or scissors?").toLowerCase();
-console.log(playerChoice);
+
+getComputerChoice();
 
 function playRound(playerChoice, computerChoice) {
     if (playerChoice === "rock" && computerChoice === "rock") {
