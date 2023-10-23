@@ -2,10 +2,10 @@ function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-const randomNumber = getRandomNumber(1, 3);
 let computerChoice;
 
-function getComputerChoice() {
+function getComputerChoice() { 
+    let randomNumber = getRandomNumber(1, 3);
     if (randomNumber === 1) {
         computerChoice = "rock";
     } else if (randomNumber === 2) {
@@ -17,7 +17,6 @@ function getComputerChoice() {
 }
 
 let playerChoice;
-getComputerChoice();
 
 function playRound(playerChoice, computerChoice) {
     if (playerChoice === "rock" && computerChoice === "rock") {
@@ -46,6 +45,7 @@ let computerScore = 0;
 
 function game() {
     for (let i = 0; i < 5; i++) {
+        getComputerChoice();
         playerChoice = prompt("Rock, paper, or scissors?").toLowerCase();
         let roundResult = playRound(playerChoice, computerChoice);
         if (roundResult.includes("win")) {
@@ -68,8 +68,8 @@ function game() {
         } else if (playerScore > computerScore) {
             console.log("Game over. You won!");
         } else if (playerScore < computerScore) {
-            console.log("Game over. You lost.");
-        }
+            console.log("Game over. You lost."); 
+        } 
     }
 
 game();
